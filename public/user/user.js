@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	//DATA
-	console.log("fetch starts here");
+
 	fetch("http://localhost:3001/api")
 		.then((response) => response.json())
 		.then((data) => {

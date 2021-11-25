@@ -10,7 +10,7 @@ const user = supabase.auth.user();
 console.log(user);
 
 //DOM
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 	const product = document.querySelector("#product");
 	const pack = document.querySelector("#pack");
 	const image = document.querySelector("#image");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 
 			//SUBMIT
-			submitBt.addEventListener("click", (event) => {
+			submitBt.addEventListener("click", () => {
 				fetch("http://localhost:3000", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

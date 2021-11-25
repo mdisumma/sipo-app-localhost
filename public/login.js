@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	//LogIN
 
-	signIn.addEventListener("click", async (e) => {
+	signIn.addEventListener("click", (e) => {
 		e.preventDefault();
 
 		if (email.value && password.value) {
@@ -60,17 +60,31 @@ window.addEventListener("DOMContentLoaded", () => {
 				}),
 			})
 				.then((response) => response.json())
-				.then((result) => console.log(result))
-				.catch((error) => console.log("error", error));
+				.then(
+					(result) => console.log(result)
+					// {
+					// 	if (result.data[0].admin === true) {
+					// 		window.location.replace(`http://localhost:3001/admin/`);
 
-			window.location.href = `http://localhost:3001/user/`;
+					// 		console.log(result.data[0].admin);
+					// 	}
+					// 	if (result.data[0].admin === false) {
+					// 		window.location.replace(`http://localhost:3001/user/`);
+
+					// 		console.log(result.data[0].admin);
+					// 	}
+					// 	console.log(result);
+					// }
+				)
+				.catch((error) => console.log("error", error));
+			window.location.replace("/user/");
 		} else {
 			alert("please provide email and password");
 		}
 	});
 
 	//SignMAGICLINK
-	signMagiclink.addEventListener("click", async (e) => {
+	signMagiclink.addEventListener("click", (e) => {
 		e.preventDefault();
 
 		console.log(email.value);
