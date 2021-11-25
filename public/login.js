@@ -51,6 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		e.preventDefault();
 
 		if (email.value && password.value) {
+			console.log(Data);
 			fetch("http://localhost:3001/logIn/", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -61,7 +62,10 @@ window.addEventListener("DOMContentLoaded", () => {
 			})
 				.then((response) => response.json())
 				.then(
-					(result) => console.log(result)
+					(result) => {
+						console.log(result);
+						location.replace("/admin/");
+					}
 					// {
 					// 	if (result.data[0].admin === true) {
 					// 		window.location.replace(`http://localhost:3001/admin/`);
@@ -75,9 +79,8 @@ window.addEventListener("DOMContentLoaded", () => {
 					// 	}
 					// 	console.log(result);
 					// }
-				)
-				.catch((error) => console.log("error", error));
-			window.location.replace("/user/");
+				);
+			// window.location.replace("/user/");
 		} else {
 			alert("please provide email and password");
 		}
