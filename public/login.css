@@ -1,0 +1,46 @@
+:root {
+	--green: rgb(81, 106, 93);
+}
+
+body {
+	max-width: 960px;
+	min-width: 360px;
+	margin: 0 auto;
+}
+
+header {
+	display: block;
+	border-bottom: 1px solid var(--green);
+}
+#logo {
+	display: block;
+	margin: 10% auto;
+}
+form {
+	width: 300px;
+	margin: 20px auto;
+}
+input {
+	margin: 10px 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+}
+button {
+	background-color: white;
+	border: 1px solid var(--green);
+	margin: 10px 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	color: var(--green);
+}
+button:hover {
+	background-color: var(--green);
+	border: 1px solid var(--green);
+	margin: 10px 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	color: white;
+}

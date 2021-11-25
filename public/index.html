@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <script src="https://unpkg.com/@supabase/supabase-js"></script>
+   <script src="login.js" defer></script>
+   <link rel="stylesheet" href="login.css">
+   <title>sipo | login</title>
+</head>
+
+<body>
+   <header>
+      <img id="logo" src="./sipo_logo.png" alt="sipo logo">
+   </header>
+
+   <form id="form">
+
+      <input type="email" id="email" name="email" placeholder="email">
+      <br>
+
+      <label for="password"></label>
+      <input type="password" id="password" name="password" placeholder="password">
+      <br>
+
+      <button id="sign_up" type="sign_up" value="sign_up">sign up</button>
+      <br>
+
+      <button id="sign_in" type="sign_in" value="sign_in">log in</button>
+      <br>
+      <hr>
+
+      <button id="sign_magiclink" type="sign_magiclink" value="sign_magiclink">sign with magic link</button>
+      <button id="sign_google" type="sign_google" value="sign_google">sign with google</button>
+   </form>
+
+
+</body>
+
+</html>

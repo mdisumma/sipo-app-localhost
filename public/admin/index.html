@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <script src="https://unpkg.com/@supabase/supabase-js" defer></script>
+   <script src="./admin.js" defer></script>
+   <link rel="stylesheet" href="./admin.css">
+
+   <title>sipo | admin</title>
+</head>
+
+<body>
+   <header>
+
+      <button id="log_out" type="log_out" value="log_out">log out</button>
+      <img id="logo" src="../sipo_logo.png" alt="sipo logo">
+
+   </header>
+   <div class="inputs">
+
+      <input type="text" id="product" name="product" placeholder="product">
+
+      <input type="number" id="pack" name="pack" placeholder="pack">
+
+      <input type="text" id="image" name="image" placeholder="image"
+         value="https://www.sipo.it/wp-content/uploads/elementor/thumbs/SIPO_logo-1920w-p7ruqqu5bxh31heipl4aitc2ldncuunfhl9fwy73hw.png">
+
+      <input type="number" id="price" name="price" placeholder="price">
+   </div>
+
+   <button id="submit" type="submit" value="submit">submit</button>
+
+
+
+   <div id="product_list"></div>
+
+
+
+
+
+</body>
+
+</html>
