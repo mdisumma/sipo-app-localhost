@@ -51,7 +51,6 @@ window.addEventListener("DOMContentLoaded", () => {
 		e.preventDefault();
 
 		if (email.value && password.value) {
-			console.log(Data);
 			fetch("http://localhost:3001/logIn/", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
