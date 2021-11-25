@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const productList = document.querySelector("#product_list");
 	const submitBt = document.querySelector("#submit");
 	const logOut = document.querySelector("#log_out");
-	console.log("the DOM is loaded");
+
 	//DATA
 	fetch("http://localhost:3001/api")
 		.then((response) => response.json())

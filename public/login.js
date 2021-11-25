@@ -51,35 +51,21 @@ window.addEventListener("DOMContentLoaded", () => {
 		e.preventDefault();
 
 		if (email.value && password.value) {
-			var post = {
+			fetch("http://localhost:3001/logIn/", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
 					email: email.value,
 					password: password.value,
 				}),
-			};
-
-			fetch("http://localhost:3001/logIn/", post)
+			})
 				.then((response) => response.json())
-				.then((result) => {
-					console.log(result);
-
-					if (result.data[0].admin === true) {
-						window.location.href = `http://localhost:3001/admin/`;
-
-						console.log(result.data[0].admin);
-					}
-					if (result.data[0].admin === false) {
-						window.location.href = `http://localhost:3001/user/`;
-
-						console.log(result.data[0].admin);
-					}
-				})
-
+				.then((result) => console.log(result))
 				.catch((error) => console.log("error", error));
+
+			window.location.href = `http://localhost:3001/user/`;
 		} else {
-			alert("please provide your email and password");
+			alert("please provide email and password");
 		}
 	});
 
