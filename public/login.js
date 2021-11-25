@@ -60,26 +60,19 @@ window.addEventListener("DOMContentLoaded", () => {
 				}),
 			})
 				.then((response) => response.json())
-				.then(
-					(result) => {
-						console.log(result);
-						location.replace("/admin/");
+				.then((result) => {
+					if (result.data[0].admin === true) {
+						window.location.replace(`http://localhost:3001/admin/`);
+
+						console.log(result.data[0].admin);
 					}
-					// {
-					// 	if (result.data[0].admin === true) {
-					// 		window.location.replace(`http://localhost:3001/admin/`);
+					if (result.data[0].admin === false) {
+						window.location.replace(`http://localhost:3001/user/`);
 
-					// 		console.log(result.data[0].admin);
-					// 	}
-					// 	if (result.data[0].admin === false) {
-					// 		window.location.replace(`http://localhost:3001/user/`);
-
-					// 		console.log(result.data[0].admin);
-					// 	}
-					// 	console.log(result);
-					// }
-				);
-			// window.location.replace("/user/");
+						console.log(result.data[0].admin);
+					}
+					console.log(result);
+				});
 		} else {
 			alert("please provide email and password");
 		}
